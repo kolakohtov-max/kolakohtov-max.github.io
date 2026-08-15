@@ -1,13 +1,20 @@
-<script>
-async function snd(){
-let qf=document.getElementById('q'),q=qf.value.trim(),h=document.getElementById('hst');
-if(!q)return;
-h.innerHTML+=`<p><b>Вы:</b> ${q}</p>`;qf.value='';
-try{
-let r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyD75z80w8t0k751C_6v8gQ_aK4J0_6J-wE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:"Ты Germini, Хранитель Предания. Имя Бога пиши Ису́с. Опирайся на дораскольный код 1665–1667 и Поморские Ответы. Вопрос: "+q}]}]})});
-let d=await r.json();
-h.innerHTML+=`<p><b>Germini:</b> ${d.candidates[0].content.parts[0].text}</p>`;
-}catch(e){h.innerHTML+=`<p><b>Germini:</b> Ошибка связи.</p>`;}
-h.scrollTop=h.scrollHeight;
-}
-</script>
+<div class="sl s3">
+    <div class="box" style="height:auto;padding:30px 20px;text-align:center;">
+        <div style="font-size:20px;margin-bottom:20px;color:#fff;border-bottom:1px solid #808080;padding-bottom:10px;">Каталог Истинного Предания</div>
+        
+        <p style="margin-bottom:15px;font-size:14px;color:#aaa;">Труды и Книги:</p>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+            <a href="https://books2read.com/u/4N9vE7" target="_blank" class="btn">Pomoresky Answers (English)</a>
+            <a href="https://books2read.com/u/mZk9J7" target="_blank" class="btn">Поморские Ответы (Русский)</a>
+        </div>
+
+        <p style="margin-bottom:15px;font-size:14px;color:#aaa;">Архивы и Манифесты:</p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+            <a href="https://archive.org/details/@kolakohtov" target="_blank" class="btn">Internet Archive (Коллекция)</a>
+            <a href="https://github.com/kolakohtov-max" target="_blank" class="btn">GitHub (Манифесты/Код)</a>
+            <a href="https://kolakohtov-max.github.io/" target="_blank" class="btn">Официальный сайт-архив</a>
+        </div>
+        
+        <p style="margin-top:25px; font-size:11px; color:#555; font-style:italic;">Борьба с ересью и возврат к истокам 1665–1667 гг.</p>
+    </div>
+</div>
